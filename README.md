@@ -7,9 +7,8 @@
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- Ruby on Rails
+
 
 ## Live Demo (if available)
 
