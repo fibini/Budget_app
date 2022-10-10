@@ -11,6 +11,8 @@
   </head>
 
   <body>
+  <%= button_to "Log out", destroy_user_session_path,
+       { method: :delete, data: { turbo: false}, class: 'create_button log_out'} %>
     <%= yield %>
   </body>
 </html>

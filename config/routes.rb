@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :items
-  root "groups#index"
-  devise_for :users
+  root "splashes#index"
+  devise_for :users, controllers: { sessions: 'users/sessions' }
   resources :groups do
     resources :entities
   end
