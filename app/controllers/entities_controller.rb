@@ -7,8 +7,8 @@ class EntitiesController < ApplicationController
   end
 
   # GET /entities/1 or /entities/1.json
-  def show
-  end
+  # def show
+  # end
 
   # GET /entities/new
   def new
@@ -16,8 +16,8 @@ class EntitiesController < ApplicationController
   end
 
   # GET /entities/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /entities or /entities.json
   def create
@@ -35,17 +35,17 @@ class EntitiesController < ApplicationController
   end
 
   # PATCH/PUT /entities/1 or /entities/1.json
-  def update
-    respond_to do |format|
-      if @entity.update(entity_params)
-        format.html { redirect_to entity_url(@entity), notice: "Entity was successfully updated." }
-        format.json { render :show, status: :ok, location: @entity }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @entity.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @entity.update(entity_params)
+  #       format.html { redirect_to entity_url(@entity), notice: "Entity was successfully updated." }
+  #       format.json { render :show, status: :ok, location: @entity }
+  #     else
+  #       format.html { render :edit, status: :unprocessable_entity }
+  #       format.json { render json: @entity.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /entities/1 or /entities/1.json
   def destroy
