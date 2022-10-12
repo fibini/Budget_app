@@ -7,12 +7,13 @@
     <tr>
       <th>Icon</th>
       <th>Name</th>
-      <th>Total</th>
+      <th>Total Spent</th>
     </tr>
   <% @groups.each do |group| %>
     <%= render group %>
   <%end%>
  </table>
 </div>
-
+<div class= 'new-category'>
 <%= link_to "New category", new_group_path %>
+</div>

@@ -23,6 +23,10 @@ a {
   color: #434b54;
 }
 
+li {
+  display: flex;
+}
+
 .home-signup {
   font-size: 40px;
 }
@@ -42,10 +46,28 @@ a {
   align-items: center;
 }
 
+img {
+  width: 50px;
+  height: 50px;
+}
+
+.icons-list {
+  display: flex;
+  justify-content: space-around;
+}
+
 #groups {
   display: flex;
   flex-direction: column;
   border-style: solid;
+  background-color: white;
+}
+
+#entities {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  background-color: white;
 }
 
 .table {
@@ -54,4 +76,74 @@ a {
 
 td {
   text-align: center;
+}
+
+.new-category {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  border-style: solid;
+  height: 50px;
+  width: 30%;
+  font-size: 40px;
+  background-color: #5fb523;
+}
+
+.transaction-form {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
+
+form {
+  width: 40%;
+}
+
+input {
+  width: 90%;
+  height: 50px;
+  font-size: 25px;
+}
+
+select {
+  width: 40%;
+  height: 40px;
+  font-size: 25px;
+}
+
+.save-button {
+  margin-top: 15px;
+}
+
+@media only screen and (max-width: 670px) {
+  .new-category {
+    font-size: 20px;
+  }
+
+  td {
+    padding-left: 20px;
+  }
+
+  input {
+    font-size: 20px;
+  }
+
+  select {
+    font-size: 15px;
+  }
+
+  li {
+    width: 80px;
+    height: 80px;
+  }
+
+  li input {
+    width: 20px;
+  }
+
+  .icons-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }

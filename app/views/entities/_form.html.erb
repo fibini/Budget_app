@@ -1,4 +1,7 @@
-<%@categories = ['Food', 'Gas', 'Clothes', 'Bills'] %>
+<%@categories = [{
+  title: 'Food',
+  icon: 'https://cdn-icons-png.flaticon.com/512/2819/2819194.png'
+}] %>
 
 <%= form_with model: entity, url: group_entities_path, method: :post, local: true, scope: :entity do |form| %>
   <% if entity.errors.any? %>
@@ -14,7 +17,14 @@
   <% end %>
 
   <div>
-        <%= form.select :group_id, current_user.groups.collect {|group| [group.name, group.id]}, {include_blank: false}, class:"form-select", id:"groupSelect" %>
+        <%# <%= form.select :group_id, current_user.groups.collect {|group| [@categories, group.id]}, {include_blank: false}, class:"form-select", id:"groupSelect" %> 
+        <%@categories.each do |cat|%>
+        <li>
+          <input type= "radio" name= "icon" value= <%=cat[:icon]%>>
+          <label for= <%=cat[:title]%>>
+          <img src= <%=cat[:icon]%> alt= <%=cat[:title]%>>
+        </li>
+        <%end%>
   </div>
 
   <div>
@@ -27,7 +37,7 @@
     <%= form.number_field :amount %>
   </div>
 
-  <div>
+  <div class= "save-button">
     <%= form.submit "Save" %>
   </div>
 <% end %>

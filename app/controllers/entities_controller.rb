@@ -5,21 +5,13 @@ class EntitiesController < ApplicationController
   def index
     @group = current_user.groups.find(params[:group_id])
     @entities = @group.entities.order(created_at: :desc)
-    @amount = @entities.sum(:amount)
+    # @amount = @entities.sum(:amount)
   end
-
-  # GET /entities/1 or /entities/1.json
-  # def show
-  # end
 
   # GET /entities/new
   def new
     @entity = Entity.new
   end
-
-  # GET /entities/1/edit
-  # def edit
-  # end
 
   # POST /entities or /entities.json
   def create

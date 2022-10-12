@@ -1,5 +1,5 @@
 <tr>
-  <td><%= link_to "#{group.icon}", group_entities_path(group.id)  %></td>
+  <td><img src=<%=group.icon%> alt=<%=group.name%>></td>
   <td><%= link_to "#{group.name}", group_entities_path(group.id)  %></td>
   <td><h3>Amount: $<%="#{group.amount}"%></h3></td>
   <td>
