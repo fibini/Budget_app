@@ -3,15 +3,16 @@
 <h1>Categories</h1>
 
 <div id="groups">
+ <table class= 'group-table'>
+    <tr>
+      <th>Icon</th>
+      <th>Name</th>
+      <th>Total</th>
+    </tr>
   <% @groups.each do |group| %>
-   <%=link_to group_entities_path(group.id) do %>
     <%= render group %>
-    <%# <p><%="Transaction Total: #{@group.entity.name}"%>
-    <p>
-      <%= link_to "Show this group", group %>
-    </p>
-    <%end%>
-  <% end %>
+  <%end%>
+ </table>
 </div>
 
 <%= link_to "New category", new_group_path %>

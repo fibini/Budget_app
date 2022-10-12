@@ -1,3 +1,5 @@
+<%@categories = ['Food', 'Gas', 'Clothes', 'Bills'] %>
+
 <%= form_with model: entity, url: group_entities_path, method: :post, local: true, scope: :entity do |form| %>
   <% if entity.errors.any? %>
     <div style="color: red">
@@ -11,10 +13,9 @@
     </div>
   <% end %>
 
-  <%# <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%# <%= form.text_field :user_id %>
-  <%# </div> %> %> %>
+  <div>
+        <%= form.select :group_id, current_user.groups.collect {|group| [group.name, group.id]}, {include_blank: false}, class:"form-select", id:"groupSelect" %>
+  </div>
 
   <div>
     <%= form.label :name, style: "display: block" %>
@@ -27,6 +28,6 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Save" %>
   </div>
 <% end %>

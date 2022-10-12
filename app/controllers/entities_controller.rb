@@ -3,7 +3,9 @@ class EntitiesController < ApplicationController
 
   # GET /entities or /entities.json
   def index
-    @entities = Entity.all
+    @group = current_user.groups.find(params[:group_id])
+    @entities = @group.entities.order(created_at: :desc)
+    @amount = @entities.sum(:amount)
   end
 
   # GET /entities/1 or /entities/1.json
@@ -21,8 +23,9 @@ class EntitiesController < ApplicationController
 
   # POST /entities or /entities.json
   def create
-    @entity = Entity.new(entity_params)
-    @entity.author_id = current_user
+    @group = Group.find(params[:entity][:group_id])
+    @entity = @group.entities.create(name: params[:entity][:name], amount: params[:entity][:amount],
+                                     user_id: current_user.id)
 
     respond_to do |format|
       if @entity.save

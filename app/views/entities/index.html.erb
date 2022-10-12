@@ -1,11 +1,14 @@
 <p style="color: green"><%= notice %></p>
+<button><%= link_to "Back to home", groups_path %></button>
 
 <h1>Transactions</h1>
-
+<%sum = 0%>
 <div id="entities">
   <% @entities.each do |entity| %>
     <%= render entity %>
+    <%sum += entity.amount%>
   <% end %>
 </div>
+<h3>Amount: $<%=sum%></h3>
 
 <%= link_to "New transaction", new_group_entity_path %>

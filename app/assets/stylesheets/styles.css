@@ -1,0 +1,57 @@
+@font-face {
+  font-family: 'Proxima Nova Bold';
+  src: url('Proxima Nova Font.otf');
+}
+
+body {
+  background-color: #3778c2;
+}
+
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-heading {
+  font-size: 80px;
+  color: #434b54;
+}
+
+a {
+  text-decoration: none;
+  color: #434b54;
+}
+
+.home-signup {
+  font-size: 40px;
+}
+
+.home-signin {
+  font-size: 40px;
+}
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+}
+
+.shared-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#groups {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+}
+
+.table {
+  display: flex;
+}
+
+td {
+  text-align: center;
+}

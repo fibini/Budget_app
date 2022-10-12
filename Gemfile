@@ -72,6 +72,7 @@ group :test do
   gem 'webdrivers'
 end
 
+gem 'bootstrap', '~> 5.0.2'
 gem 'devise'
 gem 'font-awesome-sass', '~> 6.2.0'
 gem 'rubocop', '>= 1.0', '< 2.0'
