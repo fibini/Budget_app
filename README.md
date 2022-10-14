@@ -12,7 +12,7 @@ This app was created with Rails, including Devise for authentication.
 
 ## Live Version
 
-[https://sleepy-shelf-32739.herokuapp.com/]()
+[Live](https://sleepy-shelf-32739.herokuapp.com/)
 
 ## Built With:
 
