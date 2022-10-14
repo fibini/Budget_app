@@ -17,7 +17,7 @@ RSpec.describe 'Integration', type: :system do
       expect(page.body).to include('Categories')
     end
 
-    it 'Group icon redirects expenses path' do
+    it 'Group icon redirects entities path' do
       visit '/groups'
       find('a', text: 'Food').click
       sleep(0.1)
@@ -26,16 +26,16 @@ RSpec.describe 'Integration', type: :system do
 
     it 'Add new category redirects to category' do
       visit '/groups'
-      click_on('Add Category group')
+      click_on('New category')
       sleep(0.1)
       expect(page.body).to include('New Category')
     end
   end
 
   describe 'Transaction' do
-    it 'Add a new expense redirects to expense' do
+    it 'Add a new entity redirects to entity' do
       visit "/groups/#{@group.id}/entities"
-      click_on('New Transaction')
+      click_on('New transaction')
       sleep(0.1)
       expect(page.body).to include('New Transaction')
     end

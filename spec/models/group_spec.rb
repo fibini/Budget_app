@@ -14,9 +14,4 @@ RSpec.describe Group, type: :model do
     @group.name = nil
     expect(@group).to_not be_valid
   end
-
-  it 'requires icon' do
-    @group.icon = nil
-    expect(@group).to_not be_valid
-  end
 end
