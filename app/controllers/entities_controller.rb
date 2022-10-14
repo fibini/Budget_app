@@ -5,7 +5,7 @@ class EntitiesController < ApplicationController
   def index
     @group = current_user.groups.find(params[:group_id])
     @entities = @group.entities.order(created_at: :desc)
-    # @amount = @entities.sum(:amount)
+    @amount = @entities.sum(:amount)
   end
 
   # GET /entities/new
@@ -15,9 +15,10 @@ class EntitiesController < ApplicationController
 
   # POST /entities or /entities.json
   def create
-    @group = Group.find(params[:entity][:group_id])
-    @entity = @group.entities.create(name: params[:entity][:name], amount: params[:entity][:amount],
-                                     user_id: current_user.id)
+    @group = Group.find(params[:group_id])
+    @entity = Entity.new(entity_params)
+    @entity.user = current_user
+    @entity.groups.push(@group)
 
     respond_to do |format|
       if @entity.save
