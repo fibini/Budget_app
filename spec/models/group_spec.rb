@@ -8,7 +8,7 @@ RSpec.describe Group, type: :model do
                        icon: 'https://cdn-icons-png.flaticon.com/512/2819/2819194.png',
                        user: @user)
     @group.save
-    end
+  end
 
   it 'requires name' do
     @group.name = nil
