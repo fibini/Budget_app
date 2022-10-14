@@ -11,6 +11,12 @@
     </div>
   <% end %>
   <div>
+    <%= form.label :category, style: "display: block" %>
+    <%= form.select :group_id, current_user.groups.collect {|group| [group.name, group.id]}, {include_blank: false}, class:"form-select", id:"groupSelect" %>
+  </div>
+
+  </div>
+  <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
