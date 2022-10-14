@@ -1,3 +1,18 @@
+<%@categories = [
+  {
+  title: 'Food',
+  icon: 'https://cdn-icons-png.flaticon.com/512/2819/2819194.png'
+  },
+  {
+    title: 'Clothes',
+    icon: 'https://cdn-icons-png.flaticon.com/512/3531/3531818.png'
+  },
+  {
+    title: 'Utilities',
+    icon: 'https://thumbs.dreamstime.com/z/set-utilities-icons-symbols-power-water-gas-heating-vector-illustration-your-design-set-utilities-icons-symbols-140696633.jpg'
+  }
+] %>
+
 <%= form_with(model: group) do |form| %>
   <% if group.errors.any? %>
     <div style="color: red">
@@ -12,21 +27,21 @@
   <% end %>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
   </div>
 
-  <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
+  <div class= "icons-list">
+    <%@categories.each do |cat|%>
+        <li>
+          <input type= "radio" name= "icon" value= <%=cat[:icon]%>>
+          <label for= <%=cat[:title]%>>
+          <img src= <%=cat[:icon]%> alt= <%=cat[:title]%>>
+        </li>
+        <%end%>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class= "save-button">
+    <%= form.submit "Save" %>
   </div>
 <% end %>

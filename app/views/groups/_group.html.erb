@@ -1,17 +1,5 @@
-<div id="<%= dom_id group %>">
-  <p>
-    <strong>User:</strong>
-    <%= group.user_id %>
-  </p>
-
-  <p>
-    <strong>Name:</strong>
-    <%= group.name %>
-  </p>
-
-  <p>
-    <strong>Icon:</strong>
-    <%= group.icon %>
-  </p>
-
-</div>
+<tr>
+  <td><img src=<%=group.icon%> alt=<%=group.name%>></td>
+  <td><%= link_to "#{group.name}", group_entities_path(group.id)  %></td>
+  <td><h3>Amount: $<%="#{group.amount}"%></h3></td>
+</tr>
